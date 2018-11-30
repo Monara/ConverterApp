@@ -7,244 +7,247 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/textView10"
-        android:layout_width="62dp"
-        android:layout_height="20dp"
-        android:layout_marginBottom="48dp"
-        android:text="TextView"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/textView9"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginEnd="45dp"
-        android:layout_marginRight="45dp"
-        android:text="TextView"
-        app:layout_constraintBottom_toBottomOf="@+id/textView8"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView7"
-        app:layout_constraintTop_toTopOf="@+id/textView8" />
-
-    <TextView
-        android:id="@+id/textView8"
-        android:layout_width="62dp"
-        android:layout_height="20dp"
-        android:layout_marginTop="58dp"
-        android:layout_marginBottom="59dp"
-        android:text="TextView"
-        app:layout_constraintBottom_toBottomOf="@+id/imageButton5"
+        android:id="@+id/tvFavourites"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/favourites"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageButton2" />
+        app:layout_constraintTop_toBottomOf="@+id/imButtonFavourites" />
 
     <TextView
-        android:id="@+id/textView7"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="52dp"
-        android:layout_marginLeft="52dp"
-        android:layout_marginEnd="163dp"
-        android:layout_marginRight="163dp"
-        android:text="TextView"
-        app:layout_constraintBottom_toBottomOf="@+id/textView8"
-        app:layout_constraintEnd_toStartOf="@+id/textView9"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/textView8" />
+        android:id="@+id/tvPrefixes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="28dp"
+        android:layout_marginRight="28dp"
+        android:text="@string/prefixes"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imButtonPrefixes" />
 
     <TextView
-        android:id="@+id/textView6"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginEnd="45dp"
-        android:layout_marginRight="45dp"
-        android:text="TextView"
-        app:layout_constraintBottom_toBottomOf="@+id/textView4"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView2"
-        app:layout_constraintTop_toTopOf="@+id/textView4" />
+        android:id="@+id/tvWeight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="29dp"
+        android:layout_marginLeft="29dp"
+        android:text="@string/weight"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imButtonWeight" />
 
     <TextView
-        android:id="@+id/textView4"
-        android:layout_width="62dp"
-        android:layout_height="20dp"
-        android:layout_marginTop="59dp"
-        android:layout_marginBottom="60dp"
-        android:text="TextView"
-        app:layout_constraintBottom_toBottomOf="@+id/imageButton2"
+        android:id="@+id/tvArea"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/area"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageButton11" />
+        app:layout_constraintTop_toBottomOf="@+id/imButtonArea" />
 
     <TextView
-        android:id="@+id/textView2"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="52dp"
-        android:layout_marginLeft="52dp"
-        android:layout_marginEnd="163dp"
-        android:layout_marginRight="163dp"
-        android:text="TextView"
-        app:layout_constraintBottom_toBottomOf="@+id/textView4"
-        app:layout_constraintEnd_toStartOf="@+id/textView6"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/textView4" />
-
-    <ImageButton
-        android:id="@+id/imageButton5"
+        android:id="@+id/tvTime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="13dp"
-        android:background="@android:color/transparent"
-        app:layout_constraintBottom_toTopOf="@+id/textView10"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/ic_round_ac_unit_24px" />
-
-    <ImageButton
-        android:id="@+id/imageButton3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="3dp"
-        android:layout_marginLeft="3dp"
-        android:layout_marginBottom="10dp"
-        android:background="@android:color/transparent"
-        app:layout_constraintBottom_toTopOf="@+id/textView9"
-        app:layout_constraintStart_toStartOf="@+id/textView9"
-        app:srcCompat="@drawable/ic_round_ac_unit_24px" />
-
-    <ImageButton
-        android:id="@+id/imageButton2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="41dp"
-        android:background="@android:color/transparent"
-        app:layout_constraintBottom_toTopOf="@+id/imageButton5"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/ic_round_ac_unit_24px" />
-
-    <ImageButton
-        android:id="@+id/imageButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="7dp"
-        android:layout_marginLeft="7dp"
-        android:layout_marginBottom="10dp"
-        android:background="@android:color/transparent"
-        app:layout_constraintBottom_toTopOf="@+id/textView7"
-        app:layout_constraintStart_toStartOf="@+id/textView7"
-        app:srcCompat="@drawable/ic_round_ac_unit_24px" />
+        android:layout_marginEnd="18dp"
+        android:layout_marginRight="18dp"
+        android:text="@string/time"
+        app:layout_constraintEnd_toEndOf="@+id/imButtonTime"
+        app:layout_constraintTop_toBottomOf="@+id/imButtonTime" />
 
     <TextView
-        android:id="@+id/textView5"
-        android:layout_width="62dp"
-        android:layout_height="16dp"
-        android:layout_marginTop="139dp"
-        android:layout_marginBottom="138dp"
-        android:text="TextView"
-        app:layout_constraintBottom_toTopOf="@+id/imageButton2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageButton
-        android:id="@+id/imageButton10"
+        android:id="@+id/tvTemperature"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="7dp"
-        android:layout_marginLeft="7dp"
-        android:layout_marginBottom="11dp"
-        android:background="@android:color/transparent"
-        app:layout_constraintBottom_toTopOf="@+id/textView2"
-        app:layout_constraintStart_toStartOf="@+id/textView2"
-        app:srcCompat="@drawable/ic_round_ac_unit_24px" />
-
-    <ImageButton
-        android:id="@+id/imageButton11"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="43dp"
-        android:background="@android:color/transparent"
-        app:layout_constraintBottom_toTopOf="@+id/imageButton2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/ic_round_ac_unit_24px" />
-
-    <ImageButton
-        android:id="@+id/imageButton12"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="3dp"
-        android:layout_marginLeft="3dp"
-        android:layout_marginBottom="11dp"
-        android:background="@android:color/transparent"
-        app:layout_constraintBottom_toTopOf="@+id/textView6"
-        app:layout_constraintStart_toStartOf="@+id/textView6"
-        app:srcCompat="@drawable/ic_round_ac_unit_24px" />
-
-    <ImageButton
-        android:id="@+id/imageButton9"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="11dp"
-        android:layout_marginRight="11dp"
-        android:layout_marginBottom="10dp"
-        android:background="@android:color/transparent"
-        app:layout_constraintBottom_toTopOf="@+id/textView3"
-        app:layout_constraintEnd_toEndOf="@+id/textView3"
-        app:srcCompat="@drawable/ic_round_ac_unit_24px" />
+        android:layout_marginTop="2dp"
+        android:text="@string/temperature"
+        app:layout_constraintEnd_toEndOf="@+id/tvWeight"
+        app:layout_constraintStart_toStartOf="@+id/imButtonLength"
+        app:layout_constraintTop_toBottomOf="@+id/imButtonTemperature" />
 
     <TextView
-        android:id="@+id/textView3"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginEnd="45dp"
-        android:layout_marginRight="45dp"
-        android:text="TextView"
-        app:layout_constraintBottom_toBottomOf="@+id/textView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView"
-        app:layout_constraintTop_toTopOf="@+id/textView5" />
-
-    <ImageButton
-        android:id="@+id/imageButton4"
+        android:id="@+id/tvPower"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="7dp"
-        android:layout_marginLeft="7dp"
-        android:layout_marginBottom="10dp"
-        android:background="@android:color/transparent"
-        app:layout_constraintBottom_toTopOf="@+id/textView"
-        app:layout_constraintStart_toStartOf="@+id/textView"
+        android:layout_marginEnd="21dp"
+        android:layout_marginRight="21dp"
+        android:text="@string/power"
+        app:layout_constraintEnd_toStartOf="@+id/imButtonPrefixes"
+        app:layout_constraintTop_toBottomOf="@+id/imButtonPower" />
+
+    <TextView
+        android:id="@+id/tvSpeed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:text="@string/speed"
+        app:layout_constraintEnd_toStartOf="@+id/guideline2"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toBottomOf="@+id/imButtonSpeed" />
+
+    <TextView
+        android:id="@+id/tvVolume"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:text="@string/volume"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline2"
+        app:layout_constraintTop_toBottomOf="@+id/imButtonVolume" />
+
+    <TextView
+        android:id="@+id/tvLength"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:text="@string/length"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imButtonLength" />
+
+    <ImageButton
+        android:id="@+id/imButtonVolume"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline2"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_outline_opacity_24px" />
+
+    <ImageButton
+        android:id="@+id/imButtonTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imButtonPower"
+        app:layout_constraintTop_toBottomOf="@+id/tvVolume"
+        app:srcCompat="@drawable/ic_outline_schedule_24px" />
+
+    <ImageButton
+        android:id="@+id/imButtonTemperature"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintEnd_toStartOf="@+id/imButtonPower"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvLength"
         app:srcCompat="@drawable/ic_round_ac_unit_24px" />
 
     <ImageButton
-        android:id="@+id/imageButton8"
+        android:id="@+id/imButtonPower"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
-        android:layout_marginBottom="8dp"
-        android:background="@android:color/transparent"
-        app:layout_constraintBottom_toTopOf="@+id/textView5"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintStart_toStartOf="@+id/tvPower"
+        app:layout_constraintTop_toBottomOf="@+id/tvSpeed"
+        app:srcCompat="@drawable/ic_outline_offline_bolt_24px" />
+
+    <ImageButton
+        android:id="@+id/imButtonArea"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvPower"
+        app:srcCompat="@drawable/ic_outline_pie_chart_24px" />
+
+    <ImageButton
+        android:id="@+id/imButtonLength"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_round_ac_unit_24px" />
+        app:srcCompat="@drawable/ic_outline_straighten_24px" />
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="0dp"
-        android:layout_height="20dp"
-        android:layout_marginStart="52dp"
-        android:layout_marginLeft="52dp"
-        android:layout_marginEnd="154dp"
-        android:layout_marginRight="154dp"
-        android:text="TextView"
-        app:layout_constraintEnd_toStartOf="@+id/textView3"
+    <ImageButton
+        android:id="@+id/imButtonSpeed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintEnd_toStartOf="@+id/guideline2"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_outline_directions_car_24px" />
+
+    <ImageButton
+        android:id="@+id/imButtonWeight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="6dp"
+        android:layout_marginRight="6dp"
+        app:layout_constraintEnd_toEndOf="@+id/tvWeight"
+        app:layout_constraintTop_toBottomOf="@+id/tvTemperature"
+        app:srcCompat="@drawable/ic_outline_fitness_center_24px" />
+
+    <ImageButton
+        android:id="@+id/imButtonPrefixes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginRight="12dp"
+        app:layout_constraintEnd_toEndOf="@+id/tvPrefixes"
+        app:layout_constraintTop_toBottomOf="@+id/tvTime"
+        app:srcCompat="@drawable/ic_outline_bubble_chart_24px" />
+
+    <ImageButton
+        android:id="@+id/imButtonFavourites"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/textView5" />
+        app:layout_constraintTop_toBottomOf="@+id/tvArea"
+        app:srcCompat="@drawable/ic_outline_stars_24px" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="135dp" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="250dp" />
 
 </android.support.constraint.ConstraintLayout>

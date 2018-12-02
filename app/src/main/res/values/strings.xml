@@ -10,4 +10,21 @@
     <string name="power">Power &amp; energy</string>
     <string name="prefixes">Metrical prefixes</string>
     <string name="favourites">Favourites</string>
+
+    <string-array name="length_arrays">
+        <item>Millimetre</item>
+        <item>Centimetre</item>
+        <item>Meter</item>
+        <item>Kilometre</item>
+        <item>Mile</item>
+        <item>Foot</item>
+        <item>Yard</item>
+    </string-array>
+
+    <string-array name="speed_arrays">
+        <item>M/s</item>
+        <item>Ft/s</item>
+        <item>Mi/h</item>
+        <item>Km/h</item>
+    </string-array>
 </resources>

@@ -17,7 +17,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".Favorite" />
-        <activity android:name=".UnitCatogory"></activity>
+        <activity android:name=".Length"></activity>
     </application>
 
 </manifest>

@@ -12,6 +12,10 @@ import android.widget.TextView;
 import org.w3c.dom.Text;
 
 public class Length extends AppCompatActivity {
+    private Spinner fromSpinner;
+    private Spinner toSpinner;
+    private EditText inputValue;
+    private TextView convertResult;
 
 
     @Override
@@ -19,9 +23,10 @@ public class Length extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.length);
 
-        EditText inputBox = (EditText) findViewById(R.id.inputBox);
-
-        TextView outputBox = (TextView) findViewById(R.id.outputBox);
+        fromSpinner = (Spinner)findViewById(R.id.unitFrom);
+        toSpinner = (Spinner) findViewById(R.id.unitTo);
+        inputValue = (EditText) findViewById(R.id.inputBox);
+        convertResult = (TextView) findViewById(R.id.outputBox);
 
 
         ImageButton buttonRevert = (ImageButton) findViewById(R.id.buttonRevert);

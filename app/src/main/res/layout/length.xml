@@ -8,7 +8,7 @@
 
     <Spinner
         android:id="@+id/unitFrom"
-        style="@style/box_style"
+        android:background="@drawable/box_background"
         android:layout_width="140dp"
         android:layout_height="40dp"
         android:layout_marginStart="24dp"
@@ -24,7 +24,7 @@
 
     <Spinner
         android:id="@+id/unitTo"
-        style="@style/box_style"
+        android:background="@drawable/box_background"
         android:entries="@array/length_arrays"
         android:layout_width="140dp"
         android:layout_height="40dp"
@@ -35,10 +35,12 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/buttonRevert"
         app:layout_constraintTop_toTopOf="parent" />
+        android:background="@drawable/spinner_background"
+
 
     <EditText
         android:id="@+id/inputBox"
-        style="@style/box_style"
+        android:background="@drawable/box_background"
         android:layout_width="140dp"
         android:layout_height="40dp"
         android:layout_marginStart="24dp"
@@ -55,7 +57,7 @@
 
     <TextView
         android:id="@+id/outputBox"
-        style="@style/box_style"
+        android:background="@drawable/box_background"
         android:layout_width="140dp"
         android:layout_height="40dp"
         android:layout_marginTop="50dp"

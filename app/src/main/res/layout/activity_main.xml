@@ -283,13 +283,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_begin="135dp" />
+        app:layout_constraintGuide_percent="0.3333333333333333333" />
 
     <android.support.constraint.Guideline
         android:id="@+id/guideline2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_begin="250dp" />
+        app:layout_constraintGuide_percent="0.6666666666666666666" />
 
 </android.support.constraint.ConstraintLayout>

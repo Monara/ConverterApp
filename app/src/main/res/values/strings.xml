@@ -27,4 +27,5 @@
         <item>Mi/h</item>
         <item>Km/h</item>
     </string-array>
+    <string name="Enter_number">1</string>
 </resources>

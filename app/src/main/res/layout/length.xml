@@ -47,7 +47,7 @@
         android:background="@drawable/box_background"
         android:ems="10"
         android:inputType="numberDecimal"
-        android:text="Input"
+        android:text="@string/Enter_number"
         app:layout_constraintEnd_toStartOf="@+id/buttonConvert"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintHorizontal_chainStyle="spread"

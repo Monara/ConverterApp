@@ -16,15 +16,13 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
+
     public void lengthButton(View v) {
         Intent intent = new Intent(this, Length.class);
         startActivity(intent);
     }
 
-    public void speedButton(View v) {
-        Intent intent = new Intent(this, Speed.class);
-        startActivity(intent);
-    }
+
 
     public void favorite(View v){
         Intent intent = new Intent(this,Favorite.class);
@@ -32,4 +30,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
 }
+
+
 

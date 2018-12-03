@@ -2,6 +2,7 @@ package com.example.asus.converterapp;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.ListView;
 
 public class Favorite extends AppCompatActivity {
 
@@ -10,4 +11,5 @@ public class Favorite extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_favorite);
     }
+    ListView listView=findViewById(R.id.list_view);
 }

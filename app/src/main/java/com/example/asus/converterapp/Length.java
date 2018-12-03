@@ -3,6 +3,7 @@ package com.example.asus.converterapp;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -23,15 +24,10 @@ public class Length extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.length);
 
-        fromSpinner = (Spinner)findViewById(R.id.unitFrom);
+        fromSpinner = (Spinner) findViewById(R.id.unitFrom);
         toSpinner = (Spinner) findViewById(R.id.unitTo);
         inputValue = (EditText) findViewById(R.id.inputBox);
         convertResult = (TextView) findViewById(R.id.outputBox);
-
-
-        ImageButton buttonRevert = (ImageButton) findViewById(R.id.buttonRevert);
-
-        ImageButton buttonConvert = (ImageButton) findViewById(R.id.buttonConvert);
 
     }
 }

@@ -31,22 +31,22 @@ public class Length extends AppCompatActivity {
         toSpinner = (Spinner) findViewById(R.id.unitTo);
         inputValue = (EditText) findViewById(R.id.inputBox);
         convertResult = (TextView) findViewById(R.id.outputBox);
+        String [] length = new String [] {
+                "Millimetre",
+                "Centimetre",
+                "Meter",
+                "Kilometre",
+                "Mile",
+                "Foot",
+                "Yard"
+        };
 
-        ArrayAdapter<CharSequence> staticAdapter = ArrayAdapter.createFromResource(this, R.array.length_arrays, android.R.layout.simple_spinner_item);
-        fromSpinner.setAdapter(staticAdapter);
-        toSpinner.setAdapter(staticAdapter);
-        fromSpinner.setSelection(1);
+        final ArrayAdapter<CharSequence> spinnerAdapter = ArrayAdapter.createFromResource(this, R.array.length_arrays, android.R.layout.simple_spinner_item);
+        spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        fromSpinner.setAdapter(spinnerAdapter);
+        toSpinner.setAdapter(spinnerAdapter);
+        fromSpinner.setSelection(5);
 
-        ImageButton buttonRevert = (ImageButton) findViewById(R.id.buttonRevert);
-        buttonRevert.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-                String convertFromUnit = fromSpinner.getSelectedItem().toString();
-                String convertToUnit = toSpinner.getSelectedItem().toString();
-                convertFromUnit = convertToUnit;
-                convertToUnit = convertFromUnit;
-            }
-        });
 
         ImageButton buttonConvert = (ImageButton) findViewById(R.id.buttonConvert);
         buttonConvert.setOnClickListener(new View.OnClickListener(){
@@ -57,12 +57,28 @@ public class Length extends AppCompatActivity {
                 double userInputValue = returnErrorInputs(inputValue);
                 lengthUnit = new LengthUnit();
                 double returnedConvertedResult = lengthUnit.convert(userInputValue,convertFromUnit, convertToUnit);
-                convertResult.setText(String.valueOf(String.format("%.2f", returnedConvertedResult)));
+                convertResult.setText(Double.toString(returnedConvertedResult));
 
 
             }
 
         });
+        ImageButton buttonRevert = (ImageButton) findViewById(R.id.buttonRevert);
+        buttonRevert.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                String convertFromUnit = fromSpinner.getSelectedItem().toString();
+                String convertToUnit = toSpinner.getSelectedItem().toString();
+
+                int spinnerFrom = spinnerAdapter.getPosition(convertFromUnit);
+                toSpinner.setSelection(spinnerFrom);
+
+                int spinnerTo = spinnerAdapter.getPosition(convertToUnit);
+                fromSpinner.setSelection(spinnerTo);
+
+            }
+        });
+
     }
 
         private double returnErrorInputs(EditText input){
@@ -83,8 +99,9 @@ public class Length extends AppCompatActivity {
             if(checkContent.getText().toString().equals("")){
             Toast.makeText(Length.this, "Input field must be filled", Toast.LENGTH_LONG).show();
             return;
+            }
         }
-    }
+
         }
 
 

@@ -20,7 +20,7 @@ public class LengthUnit  {
                 {
                     case "inches":
 
-                        num2 = num1*12.0d;
+                        num2 = num1*12.0;
                         break;
                     case "feet":
                         num2 = num1;
@@ -168,8 +168,8 @@ public class LengthUnit  {
                     case "feet":
                         num2 = num1 / 30.48d;
                         break;
-                    case "yards":
-                        num2 = num1 / 91.44d;
+                    case "yard":
+                        num2 = num1 / 91.44;
                         break;
                     case "miles":
                         num2 = num1/160934.0d;

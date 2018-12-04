@@ -1,5 +1,6 @@
 package com.example.asus.converterapp;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -27,11 +28,11 @@ public class Length extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.length);
 
-        fromSpinner = (Spinner)findViewById(R.id.unitFrom);
+        fromSpinner = (Spinner) findViewById(R.id.unitFrom);
         toSpinner = (Spinner) findViewById(R.id.unitTo);
         inputValue = (EditText) findViewById(R.id.inputBox);
         convertResult = (TextView) findViewById(R.id.outputBox);
-        String [] length = new String [] {
+        String[] length = new String[]{
                 "Millimetre",
                 "Centimetre",
                 "Meter",
@@ -49,14 +50,15 @@ public class Length extends AppCompatActivity {
 
 
         ImageButton buttonConvert = (ImageButton) findViewById(R.id.buttonConvert);
-        buttonConvert.setOnClickListener(new View.OnClickListener(){
-            public void onClick(View v){
+        buttonConvert.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
                 checkIfFieldIsEmpty(inputValue);
                 String convertFromUnit = fromSpinner.getSelectedItem().toString();
                 String convertToUnit = toSpinner.getSelectedItem().toString();
+
                 double userInputValue = returnErrorInputs(inputValue);
                 lengthUnit = new LengthUnit();
-                double returnedConvertedResult = lengthUnit.convert(userInputValue,convertFromUnit, convertToUnit);
+                double returnedConvertedResult = lengthUnit.convert(userInputValue, convertFromUnit, convertToUnit);
                 convertResult.setText(Double.toString(returnedConvertedResult));
 
 
@@ -64,7 +66,7 @@ public class Length extends AppCompatActivity {
 
         });
         ImageButton buttonRevert = (ImageButton) findViewById(R.id.buttonRevert);
-        buttonRevert.setOnClickListener(new View.OnClickListener(){
+        buttonRevert.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String convertFromUnit = fromSpinner.getSelectedItem().toString();
@@ -80,6 +82,10 @@ public class Length extends AppCompatActivity {
         });
 
     }
+        public void favorite (View v){
+            Intent intent = new Intent(this, Favorite.class);
+            startActivity(intent);
+        }
 
         private double returnErrorInputs(EditText input){
             double returnedInput = 0.0;

@@ -23,7 +23,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-
     public void favorite(View v){
         Intent intent = new Intent(this,Favorite.class);
         startActivity(intent);

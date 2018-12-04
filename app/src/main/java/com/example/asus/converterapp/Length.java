@@ -10,14 +10,22 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.TextView;
-
 import org.w3c.dom.Text;
+
+
+
 
 public class Length extends AppCompatActivity {
     private Spinner fromSpinner;
     private Spinner toSpinner;
     private EditText inputValue;
     private TextView convertResult;
+
+    //from here
+
+    private int iFromSpinner = 0;
+    private int iToSpinner = 0;
+
 
 
     @Override

@@ -22,10 +22,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-   // public void speedButton(View v) {
-      //  Intent intent = new Intent(this, Speed.class);
-      //  startActivity(intent);
-   // }
+
 
     public void favorite(View v){
         Intent intent = new Intent(this,Favorite.class);

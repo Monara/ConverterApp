@@ -9,7 +9,7 @@
     </style>
     <!-- Box style  -->
     <style name="box_style">
-        <item name="android:background">@drawable/gradient_spinner</item>
+        <item name="android:background">@drawable/box_background</item>
         <item name="android:layout_marginLeft">10dp</item>
         <item name="android:layout_marginRight">10dp</item>
         <item name="android:layout_marginBottom">10dp</item>

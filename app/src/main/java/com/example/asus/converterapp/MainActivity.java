@@ -19,13 +19,18 @@ public class MainActivity extends AppCompatActivity {
 
     public void lengthButton(View v) {
         Intent intent = new Intent(this, Length.class);
-        startActivity(intent);
+        startActivity(intent); // this will lead you to length.xml
+    }
+
+    public void speedButton(View v) {
+        Intent intent = new Intent (this, Speed.class);
+        startActivity(intent);// this will lead you to speed.xml
     }
 
 
     public void favouriteButton(View v){
         Intent intent = new Intent(this,Favourite.class);
-        startActivity(intent);
+        startActivity(intent); // this will lead you to activity_favourite.xml
     }
 
 }

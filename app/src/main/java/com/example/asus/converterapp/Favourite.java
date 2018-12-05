@@ -1,15 +1,14 @@
 package com.example.asus.converterapp;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.widget.ListView;
+import android.support.v7.app.AppCompatActivity;
 
-public class Favorite extends AppCompatActivity {
+public class Favourite extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_favorite);
+        setContentView(R.layout.activity_favourite);
     }
 
 }

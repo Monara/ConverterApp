@@ -10,10 +10,10 @@
     <string name="power">Power &amp; energy</string>
     <string name="prefixes">Metrical prefixes</string>
     <string name="favourites">Favourites</string>
-    <string name="Entervalue">0</string>
-    <string name="Outputvalue">0</string>
-    <string name="Addtofavbutton">Add to favourites</string>
-    <string-array name="length_arrays">
+    <string name="Enter_value">0</string>
+    <string name="Output_value">0</string>
+    <string name="Add_to_fav_button">Add to favourites</string>
+    <string-array name="length_array">
         <item>Millimetre</item>
         <item>Centimetre</item>
         <item>Metre</item>
@@ -22,8 +22,7 @@
         <item>Feet</item>
         <item>Yard</item>
     </string-array>
-
-    <string-array name="speed_arrays">
+    <string-array name="speed_array">
         <item>M/s</item>
         <item>Ft/s</item>
         <item>Mi/h</item>

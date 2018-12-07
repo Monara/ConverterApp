@@ -1,24 +1,18 @@
 package com.example.asus.converterapp;
 
-import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
-import android.os.Bundle;
-import android.provider.Settings;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import java.util.ArrayList;
 import java.util.List;
 
-public class Length extends AppCompatActivity {
+public class ListDetailsActivity extends AppCompatActivity {
     private Spinner unitFromSpinner;
     private Spinner unitToSpinner;
     private EditText inputValue;
@@ -27,13 +21,11 @@ public class Length extends AppCompatActivity {
     private static final String TOUNIT ="toUnit";
     private static final String INPUT ="input";
     private static final String RESULT ="result";
-    private static final String PREF ="sharedpreference";
-    private GlobalModel favoriteList;
-
+    private List<FavoriteList> favor;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.length);
+        setContentView(R.layout.activity_list_details);
 
         //id for view elements
         unitFromSpinner = findViewById(R.id.unitFrom);
@@ -49,16 +41,31 @@ public class Length extends AppCompatActivity {
         spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         unitFromSpinner.setAdapter(spinnerAdapter);
         unitToSpinner.setAdapter(spinnerAdapter);
-        unitFromSpinner.setSelection(0);    //which spinner value is selected upon onCreate()
+
+        SharedPreferences fromUnit = getSharedPreferences(FROMUNIT,MODE_PRIVATE);
+        int spinnerFrom = spinnerAdapter.getPosition(fromUnit.getString(FROMUNIT, "nothing" ));
+        unitFromSpinner.setSelection(spinnerFrom);
+
+        SharedPreferences toUnit = getSharedPreferences(TOUNIT,MODE_PRIVATE);
+        int spinnerTo = spinnerAdapter.getPosition(toUnit.getString(TOUNIT, "nothing"));
+        unitToSpinner.setSelection(spinnerTo);
+
+        SharedPreferences input = getSharedPreferences(INPUT,MODE_PRIVATE);
+        inputValue.setText(Double.toString(input.getFloat(INPUT, 0)));
+
+
+        SharedPreferences result = getSharedPreferences(RESULT,MODE_PRIVATE);
+        conversionResult.setText(Double.toString(result.getFloat(RESULT, 0)));
+
+
 
         //BUTTONS
-        buttonConvert.setOnClickListener(new OnClickListener() {
-            public void onClick(View v) {    //when conversion button is clicked
+        buttonConvert.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){    //when conversion button is clicked
 
                 String fromUnitName = unitFromSpinner.getSelectedItem().toString();     //we get strings of selected spinner items (needed for calculation switch)
                 String toUnitName = unitToSpinner.getSelectedItem().toString();
 
-                lookForInput(inputValue);   //then we see if there is something to convert with this method
 //HERE!
                 double finalInputValue = Double.parseDouble(inputValue.getText().toString());     //get input value from the input box
 
@@ -68,7 +75,7 @@ public class Length extends AppCompatActivity {
             }
         });
 
-        buttonRevert.setOnClickListener(new OnClickListener() { //when reversion button is clicked
+        buttonRevert.setOnClickListener(new View.OnClickListener(){ //when reversion button is clicked
             @Override
             public void onClick(View v) {
                 String fromUnitName = unitFromSpinner.getSelectedItem().toString();     //we get strings of selected spinner items
@@ -81,45 +88,6 @@ public class Length extends AppCompatActivity {
 
             }
         });
+
     }
-
-        public void addToFavorite(View v){
-            SharedPreferences list = getSharedPreferences(PREF, MODE_PRIVATE);
-            SharedPreferences.Editor editor= list.edit();
-
-            String fromUnitName = unitFromSpinner.getSelectedItem().toString();
-            editor.putString(FROMUNIT, fromUnitName  );
-
-            String toUnitName = unitToSpinner.getSelectedItem().toString();
-            editor.putString(TOUNIT, toUnitName);
-
-            double finalInputValue = Double.parseDouble(inputValue.getText().toString());     //get input value from the input box
-            editor.putFloat(INPUT, (float)finalInputValue);
-
-            double finalResult = Double.parseDouble(conversionResult.getText().toString());
-            editor.putFloat(RESULT, (float)finalResult);
-            editor.commit();
-
-        }
-
-
-
-
-
-        private void lookForInput(EditText inputBox){
-            if (inputBox.getText().toString().equals("")){  // if input box is empty
-            Toast prompt = Toast.makeText(Length.this, "Please insert a number", Toast.LENGTH_LONG);
-            prompt.show(); //a small pop-up will prompt to add a number
-            }
-        }
-
-    public void favouriteButton(View v) {
-        Intent intent = new Intent(this, Favourite.class);
-
-        startActivity(intent);
-    }
-
-        }
-
-
-
+}

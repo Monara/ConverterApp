@@ -25,6 +25,7 @@ public class FavouriteList {
             return this.spinnerTo;
         }
         public String toString(){
-            return this.spinnerFrom + " to " + this.spinnerTo;
+            return "Conversion [From " + spinnerFrom  + ", to" + spinnerTo + ", input="
+                    + input + ", =" + result + "]";
         }
     }

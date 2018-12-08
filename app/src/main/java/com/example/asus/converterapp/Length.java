@@ -13,6 +13,8 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+
 public class Length extends AppCompatActivity {
     private Spinner unitFromSpinner;
     private Spinner unitToSpinner;
@@ -23,6 +25,8 @@ public class Length extends AppCompatActivity {
     private static final String INPUT ="input";
     private static final String RESULT ="result";
     private static final String PREF = "sharepreference";
+    private SharedPreferences prefs;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +40,7 @@ public class Length extends AppCompatActivity {
         conversionResult = findViewById(R.id.outputBox);
         ImageButton buttonConvert = findViewById(R.id.buttonConvert);
         ImageButton buttonRevert = findViewById(R.id.buttonRevert);
+        ImageButton buttonStar=findViewById(R.id.buttonStar);
 
             //making two spinners with length_array content and designing them as default
         final ArrayAdapter<CharSequence> spinnerAdapter;
@@ -79,6 +84,7 @@ public class Length extends AppCompatActivity {
             }
         });
 
+
     }
 
     public void favouriteButton(View v) {
@@ -89,18 +95,22 @@ public class Length extends AppCompatActivity {
     public void addToFavorite(View v){
         SharedPreferences list = getSharedPreferences(PREF, MODE_PRIVATE);
         SharedPreferences.Editor editor= list.edit();
-
-        String fromUnitName = unitFromSpinner.getSelectedItem().toString();
-        editor.putString(FROMUNIT, fromUnitName  );
-
-        String toUnitName = unitToSpinner.getSelectedItem().toString();
-        editor.putString(TOUNIT, toUnitName);
-
-        double finalInputValue = Double.parseDouble(inputValue.getText().toString());     //get input value from the input box
-        editor.putFloat(INPUT, (float)finalInputValue);
-
-        double finalResult = Double.parseDouble(conversionResult.getText().toString());
-        editor.putFloat(RESULT, (float)finalResult);
+        for(int i= 0; i<10; i++){
+            String fromUnitName = unitFromSpinner.getSelectedItem().toString();
+            editor.putString(FROMUNIT+i, fromUnitName  );
+        }
+        for(int i= 0; i<10; i++) {
+            String toUnitName = unitToSpinner.getSelectedItem().toString();
+            editor.putString(TOUNIT + i, toUnitName);
+        }
+        for(int i= 0; i<10; i++) {
+            double finalInputValue = Double.parseDouble(inputValue.getText().toString());     //get input value from the input box
+            editor.putFloat(INPUT+i, (float) finalInputValue);
+        }
+        for(int i= 0; i<10; i++) {
+            double finalResult = Double.parseDouble(conversionResult.getText().toString());
+            editor.putFloat(RESULT+i, (float) finalResult);
+        }
         editor.commit();
 
 

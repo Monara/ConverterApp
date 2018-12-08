@@ -53,8 +53,7 @@ public class Speed extends AppCompatActivity {
 
                     double finalInputValue = Double.parseDouble(inputValue.getText().toString());     //get input value from the input box
 
-                    SpeedConverter speedConverter = new SpeedConverter(); //new object for executing conversion
-                    double speedConverterResult = speedConverter.convertSpeedUnits(finalInputValue, fromUnitName, toUnitName);    //get a conversion result
+                    double speedConverterResult = Converter.convertSpeedUnits(finalInputValue, fromUnitName, toUnitName);    //get a conversion result
                     conversionResult.setText(Double.toString(speedConverterResult));   //set the conversion result into the output box
                 }
             }

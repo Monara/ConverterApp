@@ -12,9 +12,9 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
-
 import java.util.ArrayList;
 import java.util.List;
+
 
 public class Favourite extends AppCompatActivity {
     private Spinner unitFromSpinner;
@@ -25,13 +25,15 @@ public class Favourite extends AppCompatActivity {
     private static final String TOUNIT ="toUnit";
     private static final String INPUT ="input";
     private static final String RESULT ="result";
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_favourite);
 
         ListView lv= (ListView)findViewById(R.id.list_view);
-        lv.setAdapter(new ArrayAdapter<FavoriteList>(this, R.layout.list_item, GlobalModel.getInstance().getLists()
+        lv.setAdapter(new ArrayAdapter<FavouriteList>(this, R.layout.list_item, GlobalModel.getInstance().getLists()
         ));
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
@@ -40,7 +42,6 @@ public class Favourite extends AppCompatActivity {
                 startActivity(nextActivity);
             }
         });
-
 
     }
 

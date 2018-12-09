@@ -78,6 +78,7 @@
         android:layout_marginRight="8dp"
         android:bottomLeftRadius="10dp"
         android:bottomRightRadius="10dp"
+        android:onClick="addToFavorite"
         android:text="@string/Add_to_fav_button"
         android:topLeftRadius="10dp"
         android:topRightRadius="10dp"

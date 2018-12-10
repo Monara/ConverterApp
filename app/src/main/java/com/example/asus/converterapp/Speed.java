@@ -1,6 +1,7 @@
 package com.example.asus.converterapp;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -82,6 +83,27 @@ public class Speed extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void addToFavorite(View v){
+
+        String fromUnitName = unitFromSpinner.getSelectedItem().toString();     //we get strings of selected spinner items (needed for calculation switch)
+        String toUnitName = unitToSpinner.getSelectedItem().toString();
+        double finalInputValue = Double.parseDouble(inputValue.getText().toString());
+        double lengthConverterResult = Converter.convertLengthUnits(finalInputValue, fromUnitName, toUnitName);
+
+        FavouriteItem favouriteItem = new FavouriteItem(fromUnitName, toUnitName, finalInputValue, lengthConverterResult);
+        FavouriteItemsList.addToFavouriteList(favouriteItem);
+        String json = FavouriteItemsList.toJsonString();
+
+        SharedPreferences prefs = getSharedPreferences("prefs", MODE_PRIVATE);
+        SharedPreferences.Editor editor = prefs.edit();
+        editor.putString("Favourites", json);
+        editor.commit();
+
+        Toast prompt = Toast.makeText(Speed.this, "Added to favourites", Toast.LENGTH_SHORT);
+        prompt.show();
+
+
+    }
 
 }
 

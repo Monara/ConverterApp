@@ -85,23 +85,27 @@ public class Speed extends AppCompatActivity {
 
     public void addToFavorite(View v){
 
-        String fromUnitName = unitFromSpinner.getSelectedItem().toString();     //we get strings of selected spinner items (needed for calculation switch)
-        String toUnitName = unitToSpinner.getSelectedItem().toString();
-        double finalInputValue = Double.parseDouble(inputValue.getText().toString());
-        double lengthConverterResult = Converter.convertLengthUnits(finalInputValue, fromUnitName, toUnitName);
+        if (inputValue.getText().toString().trim().length() == 0) {  // if input box is empty
+            Toast prompt = Toast.makeText(Speed.this, "Please insert a number", Toast.LENGTH_LONG);
+            prompt.show(); //a small pop-up will prompt to add a number
+        } else {
+            String fromUnitName = unitFromSpinner.getSelectedItem().toString();     //we get strings of selected spinner items (needed for calculation switch)
+            String toUnitName = unitToSpinner.getSelectedItem().toString();
+            double finalInputValue = Double.parseDouble(inputValue.getText().toString());
+            double speedConverterResult = Converter.convertSpeedUnits(finalInputValue, fromUnitName, toUnitName);
 
-        FavouriteItem favouriteItem = new FavouriteItem(fromUnitName, toUnitName, finalInputValue, lengthConverterResult);
-        FavouriteItemsList.addToFavouriteList(favouriteItem);
-        String json = FavouriteItemsList.toJsonString();
+            FavouriteItem favouriteItem = new FavouriteItem(fromUnitName, toUnitName, finalInputValue, speedConverterResult);
+            FavouriteItemsList.addToFavouriteList(favouriteItem);
+            String json = FavouriteItemsList.toJsonString();
 
-        SharedPreferences prefs = getSharedPreferences("prefs", MODE_PRIVATE);
-        SharedPreferences.Editor editor = prefs.edit();
-        editor.putString("Favourites", json);
-        editor.commit();
+            SharedPreferences prefs = getSharedPreferences("prefs", MODE_PRIVATE);
+            SharedPreferences.Editor editor = prefs.edit();
+            editor.putString("Favourites", json);
+            editor.commit();
 
-        Toast prompt = Toast.makeText(Speed.this, "Added to favourites", Toast.LENGTH_SHORT);
-        prompt.show();
-
+            Toast prompt = Toast.makeText(Speed.this, "Added to favourites", Toast.LENGTH_SHORT);
+            prompt.show();
+        }
 
     }
 

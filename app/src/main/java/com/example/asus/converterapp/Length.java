@@ -20,11 +20,6 @@ public class Length extends AppCompatActivity {
     private Spinner unitToSpinner;
     private EditText inputValue;
     private TextView conversionResult;
-    private static final String FROMUNIT ="fromUnit";
-    private static final String TOUNIT ="toUnit";
-    private static final String INPUT ="input";
-    private static final String RESULT ="result";
-    private static final String PREF = "sharepreference";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +33,6 @@ public class Length extends AppCompatActivity {
         conversionResult = findViewById(R.id.outputBox);
         ImageButton buttonConvert = findViewById(R.id.buttonConvert);
         ImageButton buttonRevert = findViewById(R.id.buttonRevert);
-
 
             //making two spinners with length_array content and designing them as default
         final ArrayAdapter<CharSequence> spinnerAdapter;
@@ -90,24 +84,27 @@ public class Length extends AppCompatActivity {
 
     public void addToFavorite(View v){
 
-        String fromUnitName = unitFromSpinner.getSelectedItem().toString();     //we get strings of selected spinner items (needed for calculation switch)
-        String toUnitName = unitToSpinner.getSelectedItem().toString();
-        double finalInputValue = Double.parseDouble(inputValue.getText().toString());
-        double lengthConverterResult = Converter.convertLengthUnits(finalInputValue, fromUnitName, toUnitName);
+        if (inputValue.getText().toString().trim().length() == 0) {  // if input box is empty
+            Toast prompt = Toast.makeText(Length.this, "Please insert a number", Toast.LENGTH_LONG);
+            prompt.show(); //a small pop-up will prompt to add a number
+        } else {
+            String fromUnitName = unitFromSpinner.getSelectedItem().toString();     //we get strings of selected spinner items (needed for calculation switch)
+            String toUnitName = unitToSpinner.getSelectedItem().toString();
+            double finalInputValue = Double.parseDouble(inputValue.getText().toString());
+            double lengthConverterResult = Converter.convertLengthUnits(finalInputValue, fromUnitName, toUnitName);
 
-        FavouriteItem favouriteItem = new FavouriteItem(fromUnitName, toUnitName, finalInputValue, lengthConverterResult);
-        FavouriteItemsList.addToFavouriteList(favouriteItem);
-        String json = FavouriteItemsList.toJsonString();
+            FavouriteItem favouriteItem = new FavouriteItem(fromUnitName, toUnitName, finalInputValue, lengthConverterResult);
+            FavouriteItemsList.addToFavouriteList(favouriteItem);
+            String json = FavouriteItemsList.toJsonString();
 
-        SharedPreferences prefs = getSharedPreferences("prefs", MODE_PRIVATE);
-        SharedPreferences.Editor editor = prefs.edit();
-        editor.putString("Favourites", json);
-        editor.commit();
+            SharedPreferences prefs = getSharedPreferences("prefs", MODE_PRIVATE);
+            SharedPreferences.Editor editor = prefs.edit();
+            editor.putString("Favourites", json);
+            editor.commit();
 
-        Toast prompt = Toast.makeText(Length.this, "Added to favourites", Toast.LENGTH_SHORT);
-        prompt.show();
-
-
+            Toast prompt = Toast.makeText(Length.this, "Added to favourites", Toast.LENGTH_SHORT);
+            prompt.show();
+        }
     }
 }
 

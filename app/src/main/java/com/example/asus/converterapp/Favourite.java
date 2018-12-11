@@ -30,25 +30,24 @@ public class Favourite extends AppCompatActivity {
             lv.setAdapter(new ItemAdapter(this,FavouriteItemsList.getArray()));
         }
 
-        public class ItemAdapter extends ArrayAdapter<FavouriteItem> {
-            private Context mContext;
-            private List<FavouriteItem> items = new ArrayList<>();
+        public class ItemAdapter extends ArrayAdapter<FavouriteItem> { //an adapter for Favourites list
+                private Context thiscontext;
+                private List<FavouriteItem> items;
 
+            public ItemAdapter(Context context, ArrayList<FavouriteItem> list) { //constructor for ItemAdapter class
+                    super(context, 0, list);
+                    thiscontext = context;
+                    items = list;
+                }
 
-            public ItemAdapter(Context context, ArrayList<FavouriteItem> list) {
-                super(context, 0, list);
-                mContext = context;
-                items = list;
-            }
-
-            public View getView(int position, View convertView, ViewGroup parent) {
+            public View getView(int position, View convertView, ViewGroup parent) { // used to build a list of favourite items
                 View listItem = convertView;
                 if (listItem == null)
-                    listItem = LayoutInflater.from(mContext).inflate(R.layout.list_item, parent, false);
+                    listItem = LayoutInflater.from(thiscontext).inflate(R.layout.list_item, parent, false);
 
                 final FavouriteItem currentItem = items.get(position);
 
-                ImageButton button = (ImageButton) listItem.findViewById(R.id.imageButton);
+                ImageButton button = (ImageButton) listItem.findViewById(R.id.imageButton); //removing an item by an ImageButton
                 button.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -56,13 +55,12 @@ public class Favourite extends AppCompatActivity {
                         FavouriteItemsList.removeFavoriteItem(getContext(),currentItem);
 
                         Toast prompt = Toast.makeText(Favourite.this, "Removed from favourites", Toast.LENGTH_SHORT);
-                        prompt.show();
-
+                        prompt.show();//prompt that item has been removed
                     }
                 });
 
                 TextView text = (TextView) listItem.findViewById(R.id.textView);
-                text.setText(currentItem.toString());
+                text.setText(currentItem.toString());//setting text with FavouriteItem toString() method
                 return listItem;
             }
         }

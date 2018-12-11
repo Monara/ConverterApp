@@ -85,10 +85,11 @@ public class Speed extends AppCompatActivity {
 
     public void addToFavorite(View v){
 
-        if (inputValue.getText().toString().trim().length() == 0) {  // if input box is empty
+        if (inputValue.getText().toString().length() == 0) {  // if input box is empty
             Toast prompt = Toast.makeText(Speed.this, "Please insert a number", Toast.LENGTH_LONG);
             prompt.show(); //a small pop-up will prompt to add a number
         } else {
+
             String fromUnitName = unitFromSpinner.getSelectedItem().toString();     //we get strings of selected spinner items (needed for calculation switch)
             String toUnitName = unitToSpinner.getSelectedItem().toString();
             double finalInputValue = Double.parseDouble(inputValue.getText().toString());

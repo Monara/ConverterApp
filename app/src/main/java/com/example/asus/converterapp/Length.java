@@ -13,8 +13,6 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-
-
 public class Length extends AppCompatActivity {
     private Spinner unitFromSpinner;
     private Spinner unitToSpinner;
@@ -40,13 +38,13 @@ public class Length extends AppCompatActivity {
         spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         unitFromSpinner.setAdapter(spinnerAdapter);
         unitToSpinner.setAdapter(spinnerAdapter);
-        unitFromSpinner.setSelection(5);    //which spinner value is selected upon onCreate()
+        unitFromSpinner.setSelection(0);    //which spinner value is selected upon onCreate()
 
         //BUTTONS
-        buttonConvert.setOnClickListener(new OnClickListener(){
-            public void onClick(View v){    //when conversion button is clicked
+        buttonConvert.setOnClickListener(new OnClickListener(){//when conversion button is clicked
+            public void onClick(View v){
 
-                String fromUnitName = unitFromSpinner.getSelectedItem().toString();     //we get strings of selected spinner items (needed for calculation switch)
+                String fromUnitName = unitFromSpinner.getSelectedItem().toString();//we get strings of selected spinner items (needed for calculation switch)
                 String toUnitName = unitToSpinner.getSelectedItem().toString();
 
                 if (inputValue.getText().toString().trim().length() == 0) {  // if input box is empty
@@ -54,8 +52,7 @@ public class Length extends AppCompatActivity {
                     prompt.show(); //a small pop-up will prompt to add a number
                 } else {  //if there is input
 
-               double finalInputValue = Double.parseDouble(inputValue.getText().toString());     //get input value from the input box
-
+                double finalInputValue = Double.parseDouble(inputValue.getText().toString());     //get input value from the input box
                 double lengthConverterResult = Converter.convertLengthUnits(finalInputValue, fromUnitName, toUnitName);    //get a conversion result
                 conversionResult.setText(Double.toString(lengthConverterResult));   //set the conversion result into the output box
             }}
@@ -84,11 +81,12 @@ public class Length extends AppCompatActivity {
 
     public void addToFavorite(View v){
 
-        if (inputValue.getText().toString().trim().length() == 0) {  // if input box is empty
+        if (inputValue.getText().toString().length() == 0) {  // if input box is empty
             Toast prompt = Toast.makeText(Length.this, "Please insert a number", Toast.LENGTH_LONG);
             prompt.show(); //a small pop-up will prompt to add a number
         } else {
-            String fromUnitName = unitFromSpinner.getSelectedItem().toString();     //we get strings of selected spinner items (needed for calculation switch)
+
+            String fromUnitName = unitFromSpinner.getSelectedItem().toString();//we get strings of selected spinner items (needed for calculation switch)
             String toUnitName = unitToSpinner.getSelectedItem().toString();
             double finalInputValue = Double.parseDouble(inputValue.getText().toString());
             double lengthConverterResult = Converter.convertLengthUnits(finalInputValue, fromUnitName, toUnitName);
@@ -103,7 +101,7 @@ public class Length extends AppCompatActivity {
             editor.commit();
 
             Toast prompt = Toast.makeText(Length.this, "Added to favourites", Toast.LENGTH_SHORT);
-            prompt.show();
+            prompt.show();//a prompt will show that item was added to favourites
         }
     }
 }

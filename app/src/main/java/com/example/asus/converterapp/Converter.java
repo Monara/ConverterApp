@@ -1,6 +1,6 @@
 package com.example.asus.converterapp;
 
-public class Converter {
+public class Converter {// used to convert all the units with different methods
 
     public static double convertLengthUnits (double inserted, String fromUnit, String toUnit) {
 
@@ -171,6 +171,172 @@ public class Converter {
                         result = inserted * 0.6213712d;
                         break;
                     case "km/h":
+                        result = inserted;
+                        break;
+                }
+                break;
+            }
+        }
+        return result;
+    }
+
+    public static double convertTemperatureUnits(double inserted, String fromUnit, String toUnit) {
+
+        double result = 0.0; //will hold result value
+
+        String fU = fromUnit.toLowerCase();
+        String tU = toUnit.toLowerCase();
+
+        switch (fU) {
+            case "celsius": { //first spinner selected as millimetre
+                switch (tU) { //second spinner selections
+                    case "celsius":
+                        result = inserted;
+                        break;
+                    case "fahrenheit":
+                        result = inserted * 1.8d + 32;
+                        break;
+                    case "kelvin":
+                        result = inserted + 273.15d;
+                        break;
+                }
+                break;
+            }
+            case "fahrenheit": {
+                switch (tU) { //second spinner selections
+                    case "celsius":
+                        result = (inserted - 32) * 5 / 9;
+                        break;
+                    case "fahrenheit":
+                        result = inserted;
+                        break;
+                    case "kelvin":
+                        result = (inserted + 459.67) * 5 / 9;
+                        break;
+                }
+                break;
+            }
+            case "kelvin": {
+                switch (tU) { //second spinner selections
+                    case "celsius":
+                        result = inserted - 273.15d;
+                        break;
+                    case "fahrenheit":
+                        result = 9 / 5 * (inserted - 273) + 32;
+                        break;
+                    case "kelvin":
+                        result = inserted;
+                        break;
+                }
+                break;
+            }
+        }
+        return result;
+    }
+
+    public static double convertVolumeUnits(double inserted, String fromUnit, String toUnit) {
+
+        double result = 0.0; //will hold result value
+
+        String fU = fromUnit.toLowerCase();
+        String tU = toUnit.toLowerCase();
+
+        switch (fU) {
+            case "millilitre": { //first spinner selected as millimetre
+                switch (tU) { //second spinner selections
+                    case "millilitre":
+                        result = inserted;
+                        break;
+                    case "litre":
+                        result = inserted * 0.001d;
+                        break;
+                    case "gallon (us)":
+                        result = inserted * 0.0002641729d;
+                        break;
+                    case "fluid ounce (imperial)":
+                        result = inserted * 0.03519503d;
+                        break;
+                    case "fluid ounce (us)":
+                        result = inserted * 0.03381413d;
+                        break;
+                }
+                break;
+            }
+            case "litre": {
+                switch (tU) { //second spinner selections
+                    case "millilitre":
+                        result = inserted * 1000d;
+                        break;
+                    case "litre":
+                        result = inserted;
+                        break;
+                    case "gallon (us)":
+                        result = inserted * 0.2641729d;
+                        break;
+                    case "fluid ounce (imperial)":
+                        result = inserted * 35.19503d;
+                        break;
+                    case "fluid ounce (us)":
+                        result = inserted * 33.81413d;
+                        break;
+                }
+                break;
+            }
+            case "gallon (us)": {
+                switch (tU) { //second spinner selections
+                    case "millilitre":
+                        result = inserted * 3785.4d;
+                        break;
+                    case "litre":
+                        result = inserted * 3.7854d;
+                        break;
+                    case "gallon (us)":
+                        result = inserted;
+                        break;
+                    case "fluid ounce (imperial)":
+                        result = inserted * 133.2273d;
+                        break;
+                    case "fluid ounce (us)":
+                        result = inserted * 128.000026d;
+                        break;
+                }
+                break;
+            }
+            case "fluid ounce (imperial)": {
+                switch (tU) { //second spinner selections
+                    case "millilitre":
+                        result = inserted * 28.4131d;
+                        break;
+                    case "litre":
+                        result = inserted * 0.0284131d;
+                        break;
+                    case "gallon (us)":
+                        result = inserted * 0.00750597d;
+                        break;
+                    case "fluid ounce (imperial)":
+                        result = inserted;
+                        break;
+                    case "fluid ounce (us)":
+                        result = inserted * 0.9607642d;
+                        break;
+                }
+                break;
+            }
+            case "fluid ounce (us)": {
+                switch (tU) { //second spinner selections
+                    case "millilitre":
+                        result = inserted * 29.57344d;
+                        break;
+                    case "litre":
+                        result = inserted * 0.02957344d;
+                        break;
+                    case "gallon (us)":
+                        result = inserted * 0.0078125d;
+                        break;
+                    case "fluid ounce (imperial)":
+                        result = inserted * 1.040838d;
+                        break;
+                    case "fluid ounce (us)":
                         result = inserted;
                         break;
                 }

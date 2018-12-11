@@ -28,4 +28,16 @@
         <item>Mi/h</item>
         <item>Km/h</item>
     </string-array>
+    <string-array name="temperature_array">
+        <item>Celsius</item>
+        <item>Fahrenheit</item>
+        <item>Kelvin</item>
+    </string-array>
+    <string-array name="volume_array">
+        <item>Millilitre</item>
+        <item>Litre</item>
+        <item>Gallon (US)</item>
+        <item>Fluid Ounce (Imperial)</item>
+        <item>Fluid Ounce (US)</item>
+    </string-array>
 </resources>

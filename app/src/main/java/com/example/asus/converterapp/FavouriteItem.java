@@ -1,6 +1,6 @@
 package com.example.asus.converterapp;
 
-public class FavouriteItem {
+public class FavouriteItem {//favourite item  as an object with all the information for Favourites
         private String unitFrom;
         private String unitTo;
         private double input;
@@ -26,6 +26,6 @@ public class FavouriteItem {
         }
         public String toString(){
             return this.unitFrom + " to " + this.unitTo + "\n" + this.input + " to " + this.result;
-        }
+        }// how item will show up on Favourites page
     }
 

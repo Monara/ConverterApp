@@ -33,6 +33,16 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent); // this will lead you to activity_favourite.xml
     }
 
+    public void temperatureButton(View v){
+        Intent intent = new Intent(this,Temperature.class);
+        startActivity(intent); // this will lead you to activity_temperature.xml
+    }
+
+    public void volumeButton(View v){
+        Intent intent = new Intent(this,Volume.class);
+        startActivity(intent); // this will lead you to activity_volume.xml
+    }
+
 }
 
 
